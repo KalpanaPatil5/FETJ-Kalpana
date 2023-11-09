@@ -36,7 +36,13 @@ passport.serializeUser((user, save) => {
 });
 
 passport.deserializeUser((obj, save) => {
-    save(null, obj);
+    if (obj && obj.shouldClearSession) {
+        req.session.destroy((err) => {
+            save(err, obj);
+        });
+    } else {
+        save(null, obj);
+    }
 });
 
 app.get('/', (req,res) => {
