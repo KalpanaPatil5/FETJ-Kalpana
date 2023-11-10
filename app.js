@@ -41,7 +41,7 @@ function printDiamond(height) {
     }
   
     // Lower half of the diamond
-    for (let i = Math.floor(height / 2); i >= 0; i--) {
+    for (let i = Math.floor(height / 2) - 1; i >= 0; i--) {
       let row = '';
   
       for (let j = 0; j < height / 2 - i; j++) {
@@ -55,7 +55,6 @@ function printDiamond(height) {
   
       diamondPattern += row + '\n';
     }
-  
     return diamondPattern;
   }
   
