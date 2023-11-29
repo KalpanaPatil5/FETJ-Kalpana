@@ -68,9 +68,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new GoogleStrategy({
-    clientID: '200406499600-rvi7kbec856rcnndvj9ibln0lgt4pu79.apps.googleusercontent.com',
-    clientSecret: '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',
-    callbackURL: 'http://localhost:3000/auth/google/callback'
+    clientID: '',
+    clientSecret: '',
+    callbackURL: ''
 }, (accessToken, refreshToken, profile, save) => {
     return save(null, profile);
 }));
